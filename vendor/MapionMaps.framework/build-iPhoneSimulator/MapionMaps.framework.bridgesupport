@@ -1,0 +1,1079 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<struct name='MMProjectedPoint' type='{_MMProjectedPoint=&quot;x&quot;d&quot;y&quot;d}'>
+<field declared_type='double' name='x' type='d'/>
+<field declared_type='double' name='y' type='d'/>
+</struct>
+<struct name='MMProjectedRect' type='{_MMProjectedRect=&quot;origin&quot;{_MMProjectedPoint=&quot;x&quot;d&quot;y&quot;d}&quot;size&quot;{_MMProjectedSize=&quot;width&quot;d&quot;height&quot;d}}'>
+<field declared_type='MMProjectedPoint' name='origin' type='{_MMProjectedPoint=&quot;x&quot;d&quot;y&quot;d}'/>
+<field declared_type='MMProjectedSize' name='size' type='{_MMProjectedSize=&quot;width&quot;d&quot;height&quot;d}'/>
+</struct>
+<struct name='MMProjectedSize' type='{_MMProjectedSize=&quot;width&quot;d&quot;height&quot;d}'>
+<field declared_type='double' name='width' type='d'/>
+<field declared_type='double' name='height' type='d'/>
+</struct>
+<struct name='MMTile' type='{_MMTile=&quot;x&quot;I&quot;y&quot;I&quot;zoom&quot;s}'>
+<field declared_type='uint32_t' name='x' type='I'/>
+<field declared_type='uint32_t' name='y' type='I'/>
+<field declared_type='short' name='zoom' type='s'/>
+</struct>
+<function name='CLLocationCoordinate2DOptimMake'>
+<arg declared_type='CLLocationDegrees' name='latitude' type='d'/>
+<arg declared_type='CLLocationDegrees' name='longitude' type='d'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</function>
+<function name='MMProjectedPointMake'>
+<arg declared_type='double' name='x' type='d'/>
+<arg declared_type='double' name='y' type='d'/>
+<retval declared_type='MMProjectedPoint' type='{_MMProjectedPoint=dd}'/>
+</function>
+<function name='MMProjectedRectMake'>
+<arg declared_type='double' name='x' type='d'/>
+<arg declared_type='double' name='y' type='d'/>
+<arg declared_type='double' name='width' type='d'/>
+<arg declared_type='double' name='height' type='d'/>
+<retval declared_type='MMProjectedRect' type='{_MMProjectedRect={_MMProjectedPoint=dd}{_MMProjectedSize=dd}}'/>
+</function>
+<function name='MMProjectedSizeMake'>
+<arg declared_type='double' name='width' type='d'/>
+<arg declared_type='double' name='heigth' type='d'/>
+<retval declared_type='MMProjectedSize' type='{_MMProjectedSize=dd}'/>
+</function>
+<function name='MMTileKey'>
+<arg declared_type='MMTile' name='tile' type='{_MMTile=IIs}'/>
+<retval declared_type='uint64_t' type='Q'/>
+</function>
+<function name='MMTileMake'>
+<arg declared_type='uint32_t' name='x' type='I'/>
+<arg declared_type='uint32_t' name='y' type='I'/>
+<arg declared_type='short' name='zoom' type='s'/>
+<retval declared_type='MMTile' type='{_MMTile=IIs}'/>
+</function>
+<class name='MMAnnotationView'>
+<method selector='calloutAnimated'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='calloutOffset'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='calloutView'>
+<retval declared_type='SMCalloutView*' type='@'/>
+</method>
+<method selector='centerOffset'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='close'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='coordinate'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='dismissCalloutAnimated'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='initWithMapView:coordinate:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithMapView:coordinate:useLeftAccessoryView:useRightAccessoryView:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='BOOL' index='2' name='useLeftAccessoryView' type='B'/>
+<arg declared_type='BOOL' index='3' name='useRightAccessoryView' type='B'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='leftAccessoryTapped'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='leftAccessoryView'>
+<retval declared_type='UIView*' type='@'/>
+</method>
+<method selector='leftButtonTapped'>
+<retval declared_type='void (^)(MMMapView *)' function_pointer='true' type='@?'>
+<arg declared_type='MMMapView*' type='@'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='marginBottom'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='marginLeft'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='marginRight'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='marginTop'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='reCalculate'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='rightAccessoryTapped'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='rightAccessoryView'>
+<retval declared_type='UIView*' type='@'/>
+</method>
+<method selector='rightButtonTapped'>
+<retval declared_type='void (^)(MMMapView *)' function_pointer='true' type='@?'>
+<arg declared_type='MMMapView*' type='@'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='setCalloutAnimated:'>
+<arg declared_type='BOOL' index='0' name='calloutAnimated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCalloutOffset:'>
+<arg declared_type='CGPoint' index='0' name='calloutOffset' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCenterOffset:'>
+<arg declared_type='CGPoint' index='0' name='centerOffset' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCoordinate:animated:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDismissCalloutAnimated:'>
+<arg declared_type='BOOL' index='0' name='dismissCalloutAnimated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLeftAccessoryView:'>
+<arg declared_type='UIView*' index='0' name='leftAccessoryView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLeftButtonTapped:'>
+<arg declared_type='void (^)(MMMapView *)' function_pointer='true' index='0' name='leftButtonTapped' type='@?'>
+<arg declared_type='MMMapView*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMarginBottom:'>
+<arg declared_type='CGFloat' index='0' name='marginBottom' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMarginLeft:'>
+<arg declared_type='CGFloat' index='0' name='marginLeft' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMarginRight:'>
+<arg declared_type='CGFloat' index='0' name='marginRight' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMarginTop:'>
+<arg declared_type='CGFloat' index='0' name='marginTop' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRightAccessoryView:'>
+<arg declared_type='UIView*' index='0' name='rightAccessoryView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRightButtonTapped:'>
+<arg declared_type='void (^)(MMMapView *)' function_pointer='true' index='0' name='rightButtonTapped' type='@?'>
+<arg declared_type='MMMapView*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSubtitle:'>
+<arg declared_type='NSString*' index='0' name='subtitle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTapped:'>
+<arg declared_type='void (^)(MMMapView *)' function_pointer='true' index='0' name='tapped' type='@?'>
+<arg declared_type='MMMapView*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitle:'>
+<arg declared_type='NSString*' index='0' name='title' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='subtitle'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='tapped'>
+<retval declared_type='void (^)(MMMapView *)' function_pointer='true' type='@?'>
+<arg declared_type='MMMapView*' type='@'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='title'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='touch'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='MMAsyncHTTPOperation'>
+<method selector='callback'>
+<retval declared_type='CompleteBlock' function_pointer='true' type='@?'>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='initialize'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='request'>
+<retval declared_type='NSURLRequest*' type='@'/>
+</method>
+<method selector='setCallback:'>
+<arg declared_type='CompleteBlock' function_pointer='true' index='0' name='callback' type='@?'>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRequest:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MMCircle'>
+<method selector='centerCoordinate'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='fillColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='initWithMapView:centerCoordinate:r:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='centerCoordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CGFloat' index='2' name='r' type='f' type64='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='lineColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='lineWidth'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='r'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='setCenterCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='centerCoordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCenterCoordinate:animated:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='centerCoordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFillColor:'>
+<arg declared_type='UIColor*' index='0' name='fillColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineColor:'>
+<arg declared_type='UIColor*' index='0' name='lineColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineWidth:'>
+<arg declared_type='CGFloat' index='0' name='lineWidth' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setR:'>
+<arg declared_type='CGFloat' index='0' name='r' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setR:animated:'>
+<arg declared_type='CGFloat' index='0' name='r' type='f' type64='d'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShapeLayer:'>
+<arg declared_type='CAShapeLayer*' index='0' name='shapeLayer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shapeLayer'>
+<retval declared_type='CAShapeLayer*' type='@'/>
+</method>
+</class>
+<class name='MMFixImage'>
+<method selector='coordinate'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='initWithMapView:coordinate:image:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='UIImage*' index='2' name='image' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCoordinate:animated:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='updatePosition'>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MMFlexImage'>
+<method selector='initWithMapView:coordinate:image:originZoom:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='UIImage*' index='2' name='image' type='@'/>
+<arg declared_type='float' index='3' name='originZoom' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='MMMapView'>
+<method selector='addAnnotation:'>
+<arg declared_type='MMAnnotationView*' index='0' name='annotation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addAnnotation:animated:'>
+<arg declared_type='MMAnnotationView*' index='0' name='annotation' type='@'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addAnnotations:'>
+<arg declared_type='NSArray*' index='0' name='annotations' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addAnnotations:animated:'>
+<arg declared_type='NSArray*' index='0' name='annotations' type='@'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addMap:'>
+<arg declared_type='id' index='0' name='map' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addMap:atIndex:'>
+<arg declared_type='id' index='0' name='map' type='@'/>
+<arg declared_type='NSUInteger' index='1' name='index' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addOverlay:'>
+<arg declared_type='MMOverlay*' index='0' name='overlay' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addOverlays:'>
+<arg declared_type='NSArray*' index='0' name='overlays' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='annotations'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='centerCoordinate'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='centerProjectedPoint'>
+<retval declared_type='MMProjectedPoint' type='{_MMProjectedPoint=dd}'/>
+</method>
+<method selector='containPoint:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='coordinateToPixel:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='coordinateToProjectedPoint:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='MMProjectedPoint' type='{_MMProjectedPoint=dd}'/>
+</method>
+<method selector='copyrightOffset'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='decelerationRate'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='degrees'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithFrame:key:'>
+<arg declared_type='CGRect' index='0' name='frame' type='{CGRect={CGPoint=ff}{CGSize=ff}}' type64='{CGRect={CGPoint=dd}{CGSize=dd}}'/>
+<arg declared_type='NSString*' index='1' name='key' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithFrame:key:map:'>
+<arg declared_type='CGRect' index='0' name='frame' type='{CGRect={CGPoint=ff}{CGSize=ff}}' type64='{CGRect={CGPoint=dd}{CGSize=dd}}'/>
+<arg declared_type='NSString*' index='1' name='key' type='@'/>
+<arg declared_type='id' index='2' name='map' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isDragging'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='map'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='maps'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='metersPerPixel'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='openAnnotation'>
+<retval declared_type='MMAnnotationView*' type='@'/>
+</method>
+<method selector='overlays'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='panorama'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='pixelToCoordinate:'>
+<arg declared_type='CGPoint' index='0' name='pixel' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='pixelToProjectedPoint:'>
+<arg declared_type='CGPoint' index='0' name='pixel' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='MMProjectedPoint' type='{_MMProjectedPoint=dd}'/>
+</method>
+<method selector='projectedPointToPixel:'>
+<arg declared_type='MMProjectedPoint' index='0' name='projectedPoint' type='{_MMProjectedPoint=dd}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='reDraw'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeAllCache'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeAnnotation:'>
+<arg declared_type='MMAnnotationView*' index='0' name='annotation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeAnnotations:'>
+<arg declared_type='NSArray*' index='0' name='annotations' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeMap:'>
+<arg declared_type='id' index='0' name='map' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeMapAtIndex:'>
+<arg declared_type='NSUInteger' index='0' name='index' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeOverlay:'>
+<arg declared_type='MMOverlay*' index='0' name='overlay' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeOverlays:'>
+<arg declared_type='NSArray*' index='0' name='overlays' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='rotation'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='scrollViewFrame'>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}' type64='{CGRect={CGPoint=dd}{CGSize=dd}}'/>
+</method>
+<method selector='setCenterCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='centerCoordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCenterCoordinate:animated:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCenterProjectedPoint:'>
+<arg declared_type='MMProjectedPoint' index='0' name='centerProjectedPoint' type='{_MMProjectedPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCenterProjectedPoint:animated:'>
+<arg declared_type='MMProjectedPoint' index='0' name='point' type='{_MMProjectedPoint=dd}'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCopyrightOffset:'>
+<arg declared_type='CGPoint' index='0' name='copyrightOffset' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDecelerationRate:'>
+<arg declared_type='float' index='0' name='decelerationRate' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDegrees:'>
+<arg declared_type='float' index='0' name='degrees' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDegrees:animated:'>
+<arg declared_type='CGFloat' index='0' name='degrees' type='f' type64='d'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg declared_type='id' index='0' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMap:'>
+<arg declared_type='id' index='0' name='map' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaps:'>
+<arg declared_type='NSArray*' index='0' name='maps' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMetersPerPixel:'>
+<arg declared_type='double' index='0' name='metersPerPixel' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOpenAnnotation:'>
+<arg declared_type='MMAnnotationView*' index='0' name='openAnnotation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPanorama:'>
+<arg declared_type='float' index='0' name='panorama' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPanorama:animated:'>
+<arg declared_type='float' index='0' name='panorama' type='f'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRotation:'>
+<arg declared_type='float' index='0' name='rotation' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRotation:animated:'>
+<arg declared_type='CGFloat' index='0' name='rotation' type='f' type64='d'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStretchLength:'>
+<arg declared_type='float' index='0' name='stretchLength' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZoom:'>
+<arg declared_type='float' index='0' name='zoom' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZoom:animated:'>
+<arg declared_type='float' index='0' name='zoom' type='f'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='slideX'>
+<retval declared_type='NSUInteger' type='I' type64='Q'/>
+</method>
+<method selector='slideX:'>
+<arg declared_type='short' index='0' name='zoom' type='s'/>
+<retval declared_type='NSUInteger' type='I' type64='Q'/>
+</method>
+<method selector='slideY'>
+<retval declared_type='NSUInteger' type='I' type64='Q'/>
+</method>
+<method selector='slideY:'>
+<arg declared_type='short' index='0' name='zoom' type='s'/>
+<retval declared_type='NSUInteger' type='I' type64='Q'/>
+</method>
+<method selector='stretchLength'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='toSlideBackCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='toSlideCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='zoom'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='zoomIn:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomIn:animated:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomOut:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomOut:animated:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomTo:point:'>
+<arg declared_type='float' index='0' name='zoomFactor' type='f'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomTo:point:animated:'>
+<arg declared_type='float' index='0' name='zoomFactor' type='f'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<arg declared_type='BOOL' index='2' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomingIn'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='MMMapionMap'>
+<method selector='initWithTileLength:'>
+<arg declared_type='int' index='0' name='tileLength' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='mapName'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='user'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MMOverlay'>
+<method selector='afterRotation:'>
+<arg declared_type='CGFloat' index='0' name='rotation' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='animationDuration'>
+<retval declared_type='NSTimeInterval' type='d'/>
+</method>
+<method selector='mapView'>
+<retval declared_type='MMMapView*' type='@'/>
+</method>
+<method selector='projectedLocation'>
+<retval declared_type='MMProjectedPoint' type='{_MMProjectedPoint=dd}'/>
+</method>
+<method selector='setAnimationDuration:'>
+<arg declared_type='NSTimeInterval' index='0' name='animationDuration' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMapView:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPosition:animated:'>
+<arg declared_type='CGPoint' index='0' name='position' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setProjectedLocation:'>
+<arg declared_type='MMProjectedPoint' index='0' name='projectedLocation' type='{_MMProjectedPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='touch'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='MMShape'>
+<method selector='addLineToCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addLineToCoordinate:flush:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='BOOL' index='1' name='flush' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addLineToPoint:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addLineToPoint:flush:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<arg declared_type='BOOL' index='1' name='flush' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='closePath'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='enableShadow'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='fillColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='fillRule'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='initWithMapView:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='lineCap'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='lineColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='lineDashLengths'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='lineDashPhase'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='lineJoin'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='lineWidth'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='moveToCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='moveToCoordinate:flush:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='BOOL' index='1' name='flush' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='moveToPoint:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='moveToPoint:flush:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<arg declared_type='BOOL' index='1' name='flush' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='performBatchOperations:'>
+<arg declared_type='void (^)(MMShape *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='MMShape*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='scaleLineDash'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='scaleLineWidth'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setEnableShadow:'>
+<arg declared_type='BOOL' index='0' name='enableShadow' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFillColor:'>
+<arg declared_type='UIColor*' index='0' name='fillColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFillRule:'>
+<arg declared_type='NSString*' index='0' name='fillRule' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineCap:'>
+<arg declared_type='NSString*' index='0' name='lineCap' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineColor:'>
+<arg declared_type='UIColor*' index='0' name='lineColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineDashLengths:'>
+<arg declared_type='NSArray*' index='0' name='lineDashLengths' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineDashPhase:'>
+<arg declared_type='CGFloat' index='0' name='lineDashPhase' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineJoin:'>
+<arg declared_type='NSString*' index='0' name='lineJoin' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineWidth:'>
+<arg declared_type='float' index='0' name='lineWidth' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScaleLineDash:'>
+<arg declared_type='BOOL' index='0' name='scaleLineDash' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScaleLineWidth:'>
+<arg declared_type='BOOL' index='0' name='scaleLineWidth' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShadowBlur:'>
+<arg declared_type='CGFloat' index='0' name='shadowBlur' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShadowOffset:'>
+<arg declared_type='CGSize' index='0' name='shadowOffset' type='{CGSize=ff}' type64='{CGSize=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shadowBlur'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='shadowOffset'>
+<retval declared_type='CGSize' type='{CGSize=ff}' type64='{CGSize=dd}'/>
+</method>
+</class>
+<class name='MMText'>
+<method selector='coordinate'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='initWithMapView:coordinate:textString:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='NSString*' index='2' name='textString' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextBackgroundColor:'>
+<arg declared_type='CGColorRef' index='0' name='textBackgroundColor' type='^{CGColor=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextFont:'>
+<arg declared_type='CFTypeRef' index='0' name='textFont' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextFontSize:'>
+<arg declared_type='CGFloat' index='0' name='textFontSize' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextForegroundColor:'>
+<arg declared_type='CGColorRef' index='0' name='textForegroundColor' type='^{CGColor=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextString:'>
+<arg declared_type='NSString*' index='0' name='textString' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='textBackgroundColor'>
+<retval declared_type='CGColorRef' type='^{CGColor=}'/>
+</method>
+<method selector='textFont'>
+<retval declared_type='CFTypeRef' type='@'/>
+</method>
+<method selector='textFontSize'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='textForegroundColor'>
+<retval declared_type='CGColorRef' type='^{CGColor=}'/>
+</method>
+<method selector='textString'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MMUtil'>
+<method class_method='true' selector='affine:degrees:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<arg declared_type='float' index='1' name='degrees' type='f'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method class_method='true' selector='affine:degrees:inView:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<arg declared_type='float' index='1' name='degrees' type='f'/>
+<arg declared_type='UIView*' index='2' name='view' type='@'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method class_method='true' selector='animationDuration'>
+<retval declared_type='NSTimeInterval' type='d'/>
+</method>
+<method class_method='true' selector='distance:loc2:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate1' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate2' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='double' type='d'/>
+</method>
+<method class_method='true' selector='tkyToWgs:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method class_method='true' selector='wgsToTky:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='URLForTile:'>
+<arg declared_type='MMTile' index='0' name='tile' type='{_MMTile=IIs}'/>
+<retval declared_type='NSURL*' type='@'/>
+</method>
+<method selector='afterMapMove:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='afterMapZoom:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='beforeMapMove:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='beforeMapZoom:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cacheCapacity'>
+<retval declared_type='NSUInteger' type='I' type64='Q'/>
+</method>
+<method selector='coordinateToProjectedPoint:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='MMProjectedPoint' type='{_MMProjectedPoint=dd}'/>
+</method>
+<method selector='copyright'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='doubleTap:point:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='imageForTile:'>
+<arg declared_type='MMTile' index='0' name='tile' type='{_MMTile=IIs}'/>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='longSingleTap:point:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='maxZoom'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='minZoom'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='name'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='offsetOriginPoint'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='projectedPointToCoordinate:'>
+<arg declared_type='MMProjectedPoint' index='0' name='point' type='{_MMProjectedPoint=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='projectedRect'>
+<retval declared_type='MMProjectedRect' type='{_MMProjectedRect={_MMProjectedPoint=dd}{_MMProjectedSize=dd}}'/>
+</method>
+<method selector='singleTap:point:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='singleTapTwoFingers:point:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tileLength'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='zoomIn:point:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomOut:point:'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<informal_protocol name='MMMap'>
+<method selector='URLForTile:' type='@20@0:4{?=IIs}8' type64='@28@0:8{?=IIs}16'>
+<arg declared_type='MMTile' index='0' name='tile' type='{_MMTile=IIs}'/>
+<retval declared_type='NSURL*' type='@'/>
+</method>
+<method selector='coordinateToProjectedPoint:' type='{?=dd}24@0:4{?=dd}8' type64='{?=dd}32@0:8{?=dd}16'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='MMProjectedPoint' type='{_MMProjectedPoint=dd}'/>
+</method>
+<method selector='copyright' type='@8@0:4' type64='@16@0:8'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='imageForTile:' type='@20@0:4{?=IIs}8' type64='@28@0:8{?=IIs}16'>
+<arg declared_type='MMTile' index='0' name='tile' type='{_MMTile=IIs}'/>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='maxZoom' type='f8@0:4' type64='f16@0:8'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='minZoom' type='f8@0:4' type64='f16@0:8'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='name' type='@8@0:4' type64='@16@0:8'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='offsetOriginPoint' type='{CGPoint=ff}8@0:4' type64='{CGPoint=dd}16@0:8'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='projectedPointToCoordinate:' type='{?=dd}24@0:4{?=dd}8' type64='{?=dd}32@0:8{?=dd}16'>
+<arg declared_type='MMProjectedPoint' index='0' name='point' type='{_MMProjectedPoint=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='projectedRect' type='{?={?=dd}{?=dd}}8@0:4' type64='{?={?=dd}{?=dd}}16@0:8'>
+<retval declared_type='MMProjectedRect' type='{_MMProjectedRect={_MMProjectedPoint=dd}{_MMProjectedSize=dd}}'/>
+</method>
+<method selector='tileLength' type='i8@0:4' type64='i16@0:8'>
+<retval declared_type='int' type='i'/>
+</method>
+</informal_protocol>
+<informal_protocol name='MMMapViewDelegate'>
+<method selector='afterMapMove:' type='v12@0:4@8' type64='v24@0:8@16'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='afterMapZoom:' type='v12@0:4@8' type64='v24@0:8@16'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='beforeMapMove:' type='v12@0:4@8' type64='v24@0:8@16'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='beforeMapZoom:' type='v12@0:4@8' type64='v24@0:8@16'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cacheCapacity' type='I8@0:4' type64='Q16@0:8'>
+<retval declared_type='NSUInteger' type='I' type64='Q'/>
+</method>
+<method selector='doubleTap:point:' type='v20@0:4@8{CGPoint=ff}12' type64='v40@0:8@16{CGPoint=dd}24'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='longSingleTap:point:' type='v20@0:4@8{CGPoint=ff}12' type64='v40@0:8@16{CGPoint=dd}24'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='singleTap:point:' type='v20@0:4@8{CGPoint=ff}12' type64='v40@0:8@16{CGPoint=dd}24'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='singleTapTwoFingers:point:' type='v20@0:4@8{CGPoint=ff}12' type64='v40@0:8@16{CGPoint=dd}24'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomIn:point:' type='v20@0:4@8{CGPoint=ff}12' type64='v40@0:8@16{CGPoint=dd}24'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomOut:point:' type='v20@0:4@8{CGPoint=ff}12' type64='v40@0:8@16{CGPoint=dd}24'>
+<arg declared_type='MMMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+</signatures>

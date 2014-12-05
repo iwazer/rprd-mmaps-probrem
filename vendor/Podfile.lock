@@ -1,0 +1,27 @@
+PODS:
+  - FMDB (2.1):
+    - FMDB/standard (= 2.1)
+  - FMDB/common (2.1)
+  - FMDB/standard (2.1):
+    - FMDB/common
+  - MapionMaps (1.12.8):
+    - FMDB (= 2.1)
+
+DEPENDENCIES:
+  - MapionMaps (from `git@vm-github01.vdev.mapion.co.jp:maps/MapionMaps-for-iOS.git`, tag `1.12.8`)
+
+EXTERNAL SOURCES:
+  MapionMaps:
+    :git: git@vm-github01.vdev.mapion.co.jp:maps/MapionMaps-for-iOS.git
+    :tag: 1.12.8
+
+CHECKOUT OPTIONS:
+  MapionMaps:
+    :git: git@vm-github01.vdev.mapion.co.jp:maps/MapionMaps-for-iOS.git
+    :tag: 1.12.8
+
+SPEC CHECKSUMS:
+  FMDB: 2a4025247d22fb28865db84c744706385f806d7d
+  MapionMaps: cb7db83eca095ec8519590e6e1af1659c43db924
+
+COCOAPODS: 0.35.0
